@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let's Play Rock, Paper, Scissors!</title>
+</head>
+<body>
+    <script>
+    // JavaScript code of Rock,Paper,Scissors game as follow
+    
+    let userChoice = prompt('Please choose from rock, paper, or scissors and type it into the box below');
+
+    userChoice = userChoice.toLowerCase();
+    let choiceSelection = ['paper', 'rock', 'scissors'];
+    let userChoiceIndex = choiceSelection.indexOf(userChoice);
+
+    let randNum = Math.floor(Math.random() * 3);
+    let compuChoice = choiceSelection[randNum];
+
+    /*
+    console.log('You have selected + ${userChoice} The computer has selected ${compuChoice}.');
+    */
+    console.log('You selected ' + userChoice + ' meanwhile Computer has selected ' + compuChoice);
+
+    const results = [
+        ['t','c','y'],
+        ['y','t','c'],
+        ['c','y','t'],
+    ];
+
+    let outcome = results[randNum][userChoiceIndex];
+
+    const descriptions = {
+        't': "Tie!",
+        'y': "You Win!",
+        'c': "Computer Wins!"
+    };
+
+    console.log(descriptions[outcome])
+    </script>
+</body>
+</html>
